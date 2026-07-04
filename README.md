@@ -1,7 +1,8 @@
-# 🏡 EstateIQ – Bangalore House Price Prediction System
+# 🏃 ActiVision AI – Real-Time Human Activity Recognition Using Deep Learning
 
-A Flask-based machine learning web application that predicts house prices in Bangalore using property-related features such as location, total square feet, BHK, and bathrooms.  
-The project demonstrates a complete end-to-end ML workflow including data preprocessing, feature engineering, regression model evaluation, and deployment through an interactive web interface.
+A Flask-based computer vision application that recognizes human activities in real time using a laptop camera. The system uses MediaPipe to extract human body landmarks and a trained deep learning model to classify activities through an interactive web interface.
+
+The project demonstrates an end-to-end AI workflow including pose estimation, feature extraction, deep learning model training, and real-time inference.
 
 ---
 
@@ -9,107 +10,109 @@ The project demonstrates a complete end-to-end ML workflow including data prepro
 
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
+[![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white)](https://keras.io/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?logo=opencv&logoColor=white)](https://opencv.org/)
+[![MediaPipe](https://img.shields.io/badge/MediaPipe-4285F4?logo=google&logoColor=white)](https://developers.google.com/mediapipe)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white)](https://numpy.org/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ---
 
-# 🏗 Workflow & Prediction Pipeline
+# 🏗 Workflow & Activity Recognition Pipeline
 
 ```bash
-👤 User Enters Property Details
+🎥 Live Camera Input
           ↓
-🌐 Flask Web Interface
+🦴 MediaPipe Pose Detection
           ↓
-⚡ Backend Data Processing
+📍 Body Landmark Extraction
           ↓
-🧹 Data Preprocessing Pipeline
+🧹 Feature Processing
           ↓
-🧠 Trained Ridge Regression Model
+🧠 Trained Deep Learning Model
           ↓
-📊 House Price Prediction
+📊 Activity Prediction
           ↓
-✅ Predicted Price Displayed To User
+🌐 Flask Web Application
+          ↓
+✅ Real-Time Result Display
 ```
 
 ---
 
 # ✨ Core Features
 
-- Real-time Bangalore house price prediction  
-- End-to-end machine learning workflow  
-- Feature engineering and outlier handling  
-- Multiple regression model evaluation  
-- Flask-based interactive web application  
-- Trained ML model integration for predictions  
+- Real-time human activity recognition using webcam
+- Human pose estimation with MediaPipe
+- Body landmark feature extraction
+- Deep learning-based activity classification
+- Flask-powered interactive web application
+- Real-time inference from live video
+- Modular pipeline for data collection, training, and prediction
 
 ---
 
-# 🧪 Machine Learning Models & Results
+# 🧪 Deep Learning Models
 
-| Model | R² Score |
-|--------|----------|
-| Linear Regression | 0.8234 |
-| Lasso Regression | 0.8128 |
-| Ridge Regression | 0.8234 |
+| Model | Purpose |
+|--------|---------|
+| CNN | Spatial feature learning |
+| RNN | Sequential activity modeling |
+| LSTM | Temporal sequence learning |
+| GRU | Efficient sequence learning |
+| CNN-LSTM | Combined spatial and temporal learning |
 
-### ✅ Final Model Selection
+### ✅ Final Prediction Pipeline
 
-Although Linear Regression achieved similar accuracy, **Ridge Regression** was selected for its better generalization capability, stability against overfitting, and improved handling of multicollinearity. 
+The trained deep learning model processes MediaPipe pose landmarks extracted from live camera frames and predicts the corresponding human activity in real time through the Flask application.
 
 ---
 
 # ⚙️ Development Workflow
 
-## 📌 Model Development
-- Data cleaning and preprocessing  
-- Feature engineering & outlier removal  
-- Regression model training and evaluation  
-- Final Ridge Regression model selection  
+## 📌 Data & Model Development
+- Pose landmark extraction using MediaPipe
+- Data preprocessing and feature engineering
+- Deep learning model training and evaluation
+- Model export (`model.h5`) with activity labels (`labels.npy`)
 
 ## 📌 Web Application Integration
-- Model serialization using Pickle (`.pkl`)  
-- Flask backend integration  
-- Property input form handling  
-- Real-time prediction rendering  
+- Flask backend integration
+- Live webcam input processing
+- Real-time activity prediction
+- Interactive browser interface
 
 ---
 
 # 📂 Repository Structure
 
 ```text
-House_Price_Predictor/
+HUMAN_ACTIVITY_FINAL/
 │
-├── Client/
-│   ├── assets/
-│   ├── css/
-│   ├── js/
-│   ├── images/
-│   └── index.html
+├── app.py
+├── data_collection.py
+├── data_training.py
+├── inference.py
+├── model.h5
+├── labels.npy
+├── requirements.txt
 │
-├── Datasets/
-│   └── Bengaluru_House_Data.csv
+├── templates/
+│   ├── home.html
+│   └── login.html
 │
-├── Scripts/
-│   ├── banglore_home_prices_model.pickle
-│   ├── columns.json
-│   └── House_Price_Predictions.ipynb
-│
-├── Server/
-│   ├── artifacts/
-│   ├── static/
-│   ├── templates/
-│   ├── form.py
-│   ├── server.py
-│   └── util.py
+├── static/
+│   ├── bg.jpg
+│   └── styles/
 │
 ├── Snapshots/
-├── README.md
-└── requirements.txt
+│
+└── README.md
 ```
 
 ---
@@ -117,11 +120,10 @@ House_Price_Predictor/
 # ▶️ Running the Application
 
 ```bash
-cd Server
-python server.py
+python app.py
 ```
 
-Then open in your browser:
+Then open your browser:
 
 ```text
 http://127.0.0.1:5000/
@@ -133,35 +135,37 @@ http://127.0.0.1:5000/
 
 | Screenshot | Description |
 |------------|-------------|
-| ![Input Page](Snapshots/Snap-1.png) | Property details input interface |
-| ![Prediction Output](Snapshots/Snap-2.png) | Predicted house price result |
+| ![Login Page](Snapshots/Snap-1.png) | User login interface |
+| ![Home Page](Snapshots/Snap-2.png) | Main application dashboard |
+| ![Prediction Output](Snapshots/Snap-3.png) | Real-time activity recognition |
 
 ---
 
 # 🧠 Skills Demonstrated
 
-- Machine Learning workflow implementation  
-- Data preprocessing & feature engineering  
-- Regression model evaluation  
-- Flask web application development  
-- Backend ML integration  
-- Real-time prediction systems  
+- Deep Learning implementation
+- Computer Vision with OpenCV
+- Human Pose Estimation using MediaPipe
+- Feature extraction and preprocessing
+- Flask web application development
+- Real-time AI inference systems
+- End-to-end machine learning workflow
 
 ---
 
 # 🔮 Future Improvements
 
-- Implement advanced models (XGBoost, Random Forest, Neural Networks)  
-- Improve feature engineering techniques  
-- Integrate live real-estate market data  
-- Deploy application on cloud platforms (AWS / Azure / GCP)  
-- Add interactive analytics dashboard  
-- Enhance UI/UX responsiveness  
+- Support additional human activities
+- Improve accuracy using larger datasets
+- Explore Transformer-based architectures
+- Optimize for edge devices
+- Deploy on cloud platforms
+- Add activity history and analytics dashboard
 
 ---
 
 # 🏁 Project Note
 
-> This project was developed as part of an academic machine learning project to demonstrate practical understanding of data preprocessing, regression modeling, feature engineering, and Flask-based ML deployment.
+> This project was developed as a final-year academic project to demonstrate the practical implementation of deep learning, computer vision, human pose estimation, and real-time human activity recognition through a Flask-based web application.
 
 ---
