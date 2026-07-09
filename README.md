@@ -144,8 +144,8 @@ http://127.0.0.1:5000/
 
 | Screenshot | Description |
 |------------|-------------|
-| ![Input Page](Snapshots/Snap-1.png) | Property details input interface |
-| ![Prediction Output](Snapshots/Snap-2.png) | Predicted house price result |
+| ![Input Page](Snapshots/Snap-11.png) | Property details input interface |
+| ![Prediction Output](Snapshots/Snap-22.png) | Predicted house price result |
 
 ---
 
