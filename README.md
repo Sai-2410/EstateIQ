@@ -188,15 +188,11 @@ Move into the project directory:
 cd House_Price_Predictor
 ```
 
----
-
 ## 2) Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
-
----
 
 ## 3) Run the Flask Application
 
@@ -211,8 +207,6 @@ Start the Flask server:
 ```bash
 python server.py
 ```
-
----
 
 ## 4) Open the Application
 
